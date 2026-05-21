@@ -78,9 +78,44 @@
 
 ## 2. Identitat i origen
 
-### Naturalesa jurídica
+### Naturalesa jurídica — clarificació important
 
-Associació sense ànim de lucre de dret privat, finançada exclusivament per les quotes dels seus socis i per les tarifes dels serveis tècnics que presta. No rep subvencions públiques com a mecanisme principal de finançament. És l'organisme independent d'**autoregulació publicitària** a Espanya, equivalent funcional dels SROs (Self-Regulatory Organizations) britànics (ASA), francesos (ARPP) o alemanys (Werberat).
+**AUTOCONTROL NO és una empresa privada.** És una **associació sense ànim de lucre de dret privat**, regulada per la Llei Orgànica 1/2002 reguladora del Dret d'Associació. La distinció és rellevant per al disseny del nostre model:
+
+| Atribut | Estat |
+|---------|-------|
+| Forma jurídica | Associació sense ànim de lucre |
+| Naturalesa | Privada (no és organisme públic) |
+| És empresa? | **NO** — sense accionistes, sense repartiment de beneficis |
+| CIF | Q2802141H (el prefix "Q" indica entitat sense ànim de lucre) |
+| Finançament | Quotes de socis + tarifes de serveis tècnics |
+| Subvencions públiques | No són font principal |
+| Acreditació ADR | Sí, pel Govern espanyol des de 19/11/2018 |
+
+**Per què NO és empresa:**
+- No té propietaris ni accionistes — té 645 socis que paguen quota anual.
+- No reparteix beneficis — els excedents van a reserves estatutàries o reinversió.
+- No persegueix lucre — la seva finalitat estatutària és promoure publicitat responsable.
+- Govern col·legiat (Assemblea General + Junta Directiva, no propietari individual).
+
+**Per què SÍ és privada:**
+- No està integrada en cap administració pública.
+- Iniciativa privada de constitució (aea + agències, 1995).
+- Finançament privat (indústria publicitària).
+- Òrgans designats privadament.
+
+> El reconeixement del Govern com a entitat ADR (2018) **no la converteix en pública**; simplement li atorga estatus oficial per resoldre litigis publicitaris. Continua sent una associació privada amb reconeixement estatal.
+
+És l'organisme independent d'**autoregulació publicitària** a Espanya, equivalent funcional dels SROs (Self-Regulatory Organizations) britànics (ASA), francesos (ARPP) o alemanys (Werberat) — tots ells amb la mateixa figura jurídica d'"associació / non-profit amb reconeixement institucional".
+
+### Implicació per a l'ACCC
+
+L'AUTOCONTROL Català ha de replicar **exactament la mateixa figura jurídica**:
+- **Associació catalana sense ànim de lucre** regulada per la Llei 4/2008 del llibre tercer del Codi Civil de Catalunya (marc autonòmic equivalent a l'estatal Llei 1/2002).
+- **Privada**, no pública.
+- **Acreditació ADR** estatal i/o autonòmica com a objectiu del primer/segon any.
+
+Aquesta opció és la més robusta per: (a) evitar la "captura política" per la Generalitat, (b) garantir independència del jurat, (c) facilitar l'adhesió a l'EASA, i (d) seguir el model de tots els SROs europeus.
 
 ### Història
 

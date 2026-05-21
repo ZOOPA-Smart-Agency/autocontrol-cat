@@ -12,6 +12,12 @@
 
 ## Sumari executiu (one-pager)
 
+### Nota prèvia · què és AUTOCONTROL Madrid
+
+AUTOCONTROL **no és una empresa privada**: és una **associació sense ànim de lucre de dret privat** (Llei Orgànica 1/2002), amb CIF Q2802141H. No té propietaris, accionistes ni reparteix beneficis; es finança per quotes dels seus 645 socis i tarifes de serveis. El Govern espanyol la va acreditar com a entitat ADR (resolució alternativa de litigis publicitaris) el 19/11/2018, però aquest reconeixement no la converteix en pública.
+
+Aquesta figura jurídica —associació privada sense ànim de lucre amb reconeixement institucional— és exactament la que recomanem per a l'AUTOCONTROL Català.
+
 ### El context
 
 L'autoregulació publicitària a Espanya es concentra exclusivament en una única entitat estatal, **AUTOCONTROL** (Asociación para la Autorregulación de la Comunicación Comercial), amb seu a Madrid. Aquesta organització, fundada el 1995, agrupa 645 socis directes, representa aproximadament el 70% de la inversió publicitària espanyola i gestiona 32.003 revisions de campanyes l'any 2025. A Catalunya no existeix cap entitat privada equivalent: les autoritats catalanes (Consell de l'Audiovisual de Catalunya, Agència Catalana del Consum, Departament de Salut) han hagut de signar convenis amb AUTOCONTROL Madrid per disposar de les seves capacitats tècniques.
