@@ -694,7 +694,7 @@ L'ACCC és una **entitat sense ànim de lucre**: no busca retorn financer direct
 - **Retorn institucional**: aval per a Generalitat, CAC i societat civil catalana.
 - **Retorn reputacional**: posicionament de Zoopa i 498A com a referents.
 - **Retorn comercial indirecte**: noves oportunitats de negoci per als promotors (formació, consultoria, recerca aplicada).
-- **Retorn temporal**: amb una inversió inicial de 165.000 €, l'entitat assoleix autosuficiència en 12-18 mesos i pot devolver les aportacions del promotor en 24-36 mesos via excedent positiu.
+- **Retorn temporal**: amb una inversió inicial de 165.000 €, l'entitat assoleix autosuficiència en 12-18 mesos i pot retornar les aportacions del promotor en 24-36 mesos via excedent positiu.
 
 ## 5.5 Phasing de la inversió
 

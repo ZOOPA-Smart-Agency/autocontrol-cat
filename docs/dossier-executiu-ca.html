@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTOCONTROL CATALÀ · Dossier executiu</title>
+  <meta name="description" content="Estudi de viabilitat d'un organisme català d'autoregulació publicitària. Promotor: Zoopa + 498 Advance.">
+  <style>
+    @page { size: A4; margin: 1.5cm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 11pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    /* Header */
+    .header { border-bottom: 3px solid #000; padding-bottom: 20px; margin-bottom: 25px; }
+    .header .meta-top { display: flex; justify-content: space-between; align-items: flex-start; font-size: 8pt; color: #999; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+    .header h1 { font-size: 26pt; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 8px; line-height: 1.1; }
+    .header .subtitle { font-size: 12pt; color: #666; font-style: italic; margin-bottom: 12px; }
+    .header .date { font-size: 9pt; color: #999; }
+
+    /* Executive Summary */
+    .exec-summary { background: #f7f7f7; padding: 22px 28px; margin-bottom: 30px; border-left: 4px solid #000; }
+    .exec-summary h2 { font-size: 10pt; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px; font-weight: 700; }
+    .exec-summary p { font-size: 11pt; margin-bottom: 10px; }
+    .exec-summary strong { color: #c00; }
+    .exec-summary .lead { font-size: 12pt; font-style: italic; line-height: 1.5; color: #333; margin-bottom: 14px; }
+
+    /* Navigation buttons (TOC pills) */
+    .nav-container { background: #fafafa; padding: 18px 22px; margin-bottom: 35px; border: 1px solid #e0e0e0; }
+    .nav-container h3 { font-size: 9pt; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; color: #444; font-weight: 700; }
+    .nav-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+    .nav-btn {
+      display: inline-block;
+      padding: 6px 14px;
+      background: #fff;
+      border: 1px solid #000;
+      color: #000;
+      text-decoration: none;
+      font-size: 9pt;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      font-family: 'Georgia', serif;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #000; color: #fff; }
+    .nav-btn .num { display: inline-block; margin-right: 6px; font-weight: 700; color: #c00; }
+    .nav-btn:hover .num { color: #ffcc00; }
+
+    /* Sections */
+    .section { margin-bottom: 35px; page-break-inside: avoid; scroll-margin-top: 30px; }
+    .section-header { display: flex; align-items: center; margin-bottom: 18px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+    .section-number { background: #000; color: #fff; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 12pt; font-weight: 700; margin-right: 14px; flex-shrink: 0; }
+    .section-title { font-size: 16pt; font-weight: 600; }
+    .section-anchor { margin-left: auto; font-size: 8pt; color: #999; }
+    .section-anchor a { color: #999; text-decoration: none; }
+    .section-anchor a:hover { color: #000; }
+
+    /* Subsections */
+    h3 { font-size: 13pt; font-weight: 600; margin: 22px 0 10px; color: #000; }
+    h4 { font-size: 11pt; font-weight: 700; margin: 16px 0 8px; color: #333; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Body text */
+    p { margin-bottom: 10px; }
+    p strong { color: #000; }
+    a { color: #0055aa; text-decoration: none; border-bottom: 1px dotted #0055aa; }
+    a:hover { color: #c00; border-bottom-style: solid; }
+    a.external::after { content: " ↗"; font-size: 7pt; opacity: 0.6; }
+
+    /* Lists */
+    ul, ol { margin: 10px 0 14px 22px; }
+    li { margin-bottom: 5px; }
+    .checklist { list-style: none; margin: 12px 0; padding-left: 0; }
+    .checklist li { display: flex; align-items: flex-start; margin-bottom: 8px; }
+    .checklist li::before { content: "□"; margin-right: 10px; color: #666; font-size: 12pt; line-height: 1; flex-shrink: 0; }
+
+    /* Boxes */
+    .problem-box, .solution-box, .insight-box, .warning-box, .key-box {
+      padding: 14px 18px; margin: 14px 0; font-size: 10pt; line-height: 1.55; border-radius: 2px;
+    }
+    .problem-box { background: #fff5f5; border-left: 4px solid #c00; }
+    .problem-box::before { content: "PROBLEMA  "; font-weight: 700; color: #c00; letter-spacing: 1px; font-size: 8pt; }
+    .solution-box { background: #f0fff0; border-left: 4px solid #060; }
+    .solution-box::before { content: "SOLUCIÓ  "; font-weight: 700; color: #060; letter-spacing: 1px; font-size: 8pt; }
+    .insight-box { background: #fff9e6; border-left: 4px solid #cc9900; }
+    .insight-box::before { content: "INSIGHT  "; font-weight: 700; color: #996600; letter-spacing: 1px; font-size: 8pt; }
+    .warning-box { background: #fef4e8; border-left: 4px solid #e67700; }
+    .warning-box::before { content: "ATENCIÓ  "; font-weight: 700; color: #c75300; letter-spacing: 1px; font-size: 8pt; }
+    .key-box { background: #f0f4f8; border-left: 4px solid #0055aa; }
+    .key-box::before { content: "CLAU  "; font-weight: 700; color: #0055aa; letter-spacing: 1px; font-size: 8pt; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 9.5pt; page-break-inside: avoid; }
+    th { background: #000; color: #fff; text-align: left; padding: 9px 11px; font-weight: 500; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.4px; }
+    td { padding: 9px 11px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+    tr:nth-child(even) { background: #fafafa; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    td.highlight { background: #fffde7; font-weight: 600; }
+    .td-positive { color: #060; font-weight: 600; }
+    .td-negative { color: #c00; font-weight: 600; }
+
+    /* Grids */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
+    .grid-card { background: #fafafa; padding: 14px; border: 1px solid #e0e0e0; }
+    .grid-card h4 { margin-top: 0; }
+
+    /* Metrics box */
+    .metrics-box { background: #f0f4f8; border: 1px solid #d0d8e0; padding: 16px 20px; margin: 16px 0; }
+    .metrics-box h4 { font-size: 9pt; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; color: #333; }
+    .metric-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dotted #ccc; font-size: 10pt; }
+    .metric-row:last-child { border-bottom: none; }
+    .metric-value { font-weight: 700; color: #000; }
+
+    /* Timeline */
+    .timeline { margin: 18px 0 18px 22px; padding-left: 22px; border-left: 2px solid #000; }
+    .timeline-item { position: relative; padding-bottom: 16px; }
+    .timeline-item::before { content: ""; position: absolute; left: -28px; top: 5px; width: 10px; height: 10px; background: #000; border-radius: 50%; }
+    .timeline-date { font-size: 9pt; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .timeline-content { font-size: 10pt; margin-top: 4px; }
+
+    /* Quote / blockquote */
+    blockquote { background: #f7f7f7; padding: 14px 22px; margin: 14px 0; border-left: 4px solid #000; font-style: italic; font-size: 11pt; color: #333; }
+
+    /* Page break */
+    .page-break { page-break-before: always; margin-top: 40px; padding-top: 20px; }
+
+    /* Back-to-top */
+    .back-to-top { display: inline-block; font-size: 8pt; color: #666; margin-top: 8px; text-decoration: none; border: none; }
+    .back-to-top:hover { color: #000; }
+
+    /* Tags / chips */
+    .chip { display: inline-block; padding: 3px 10px; background: #e0e0e0; border-radius: 12px; font-size: 8pt; margin-right: 4px; margin-bottom: 4px; }
+    .chip-green { background: #d4edda; color: #155724; }
+    .chip-red { background: #f8d7da; color: #721c24; }
+    .chip-amber { background: #fff3cd; color: #856404; }
+    .chip-blue { background: #d1ecf1; color: #0c5460; }
+
+    /* Footer */
+    footer { margin-top: 60px; padding-top: 25px; border-top: 2px solid #000; }
+    .footer-brands { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .footer-brand { font-size: 16pt; font-weight: 700; color: #000; }
+    .footer-brand-url { font-size: 9pt; color: #666; margin-left: 12px; }
+    .footer-info { display: flex; justify-content: space-between; font-size: 8pt; color: #999; gap: 20px; }
+    .footer-info strong { color: #666; }
+    .footer-info a { color: #666; }
+    .footer-note { margin-top: 22px; padding-top: 14px; font-size: 8pt; color: #999; text-align: center; border-top: 1px solid #e0e0e0; }
+    .footer-note .internal { font-size: 7pt; color: #bbb; }
+
+    /* Print optimization */
+    @media print {
+      body { padding: 0; }
+      .section { page-break-inside: avoid; }
+      .nav-container { page-break-after: always; }
+      a { color: #000 !important; border-bottom: none !important; }
+      a.external::after { content: ""; }
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      body { padding: 20px; }
+      .header h1 { font-size: 20pt; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      table { font-size: 8.5pt; }
+      th, td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- ====== HEADER ====== -->
+  <div class="header">
+    <div class="meta-top">
+      <span>Zoopa + 498 Advance</span>
+      <span>Maig 2026 · v1.0</span>
+      <span>Confidencial · Ús intern</span>
+    </div>
+    <h1>AUTOCONTROL CATALÀ</h1>
+    <div class="subtitle">Estudi de viabilitat · Dossier executiu</div>
+    <div class="date">21 de maig de 2026 · Promotor: <a href="https://zoopa.es" class="external" target="_blank">Zoopa</a> + <a href="https://498as.com" class="external" target="_blank">498 Advance</a></div>
+  </div>
+
+  <!-- ====== EXECUTIVE SUMMARY ====== -->
+  <div class="exec-summary">
+    <h2>Resum executiu</h2>
+    <p class="lead">L'autoregulació publicitària a Espanya es concentra exclusivament en una única entitat estatal —<a href="https://www.autocontrol.es" class="external" target="_blank">AUTOCONTROL Madrid</a>— que representa el 70% de la inversió publicitària espanyola. A Catalunya no existeix cap entitat privada equivalent. Aquest document avalua la viabilitat de crear-ne una.</p>
+
+    <p><strong>Proposta:</strong> constituir l'<strong>Autoregulació Catalana de la Comunicació Comercial (ACCC)</strong>, allotjada en un consorci promotor format per la <strong>Cambra de Comerç de Barcelona</strong>, <strong>Foment del Treball Nacional</strong> i el <strong>Col·legi d'Advocats de Barcelona (ICAB)</strong>.</p>
+
+    <p><strong>Diferencial:</strong> servei en català natiu · proximitat (Barcelona) · tarifes 10-15% inferiors · coregulació estreta amb la Generalitat.</p>
+
+    <p><strong>Inversió necessària:</strong> 165.000 € (85k capital semilla + 80k fons de maniobra).</p>
+
+    <p><strong>Break-even:</strong> 85 socis pagant quota mitjana de 4.500 €/any · assolible al final del primer any (escenari base).</p>
+
+    <p><strong>Decisió proposada:</strong> aprovar 12.500 € per a un sprint de validació de 90 dies amb decisió GO/NO-GO final.</p>
+  </div>
+
+  <!-- ====== NAVIGATION ====== -->
+  <div class="nav-container">
+    <h3>Navegació ràpida</h3>
+    <div class="nav-buttons">
+      <a class="nav-btn" href="#p1"><span class="num">1</span>Proposta institucional</a>
+      <a class="nav-btn" href="#p2"><span class="num">2</span>Serveis i necessitats</a>
+      <a class="nav-btn" href="#p3"><span class="num">3</span>Projeccions econòmiques</a>
+      <a class="nav-btn" href="#p4"><span class="num">4</span>Go-to-market</a>
+      <a class="nav-btn" href="#p5"><span class="num">5</span>Inversió</a>
+      <a class="nav-btn" href="#p6"><span class="num">6</span>Benchmark vs AUTOCONTROL</a>
+      <a class="nav-btn" href="#p7"><span class="num">7</span>Comparativa europea</a>
+      <a class="nav-btn" href="#conclusions"><span class="num">✓</span>Conclusions</a>
+      <a class="nav-btn" href="#annexos"><span class="num">📎</span>Annexos</a>
+    </div>
+  </div>
+
+  <!-- ====== PART 1 — PROPOSTA INSTITUCIONAL ====== -->
+  <div class="section" id="p1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div class="section-title">La proposta institucional</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>1.1 Tres opcions d'allotjament institucional</h3>
+    <p>Crear una entitat <em>ex novo</em> presenta dificultats considerables: cost de constitució, manca de massa associativa inicial, escassetat de reconeixement institucional i risc reputacional. Per això, la nostra recomanació és <strong>integrar el projecte en una institució existent</strong> que aporti els tres elements bàsics: marca, xarxa i autoritat.</p>
+
+    <div class="grid-3">
+      <div class="grid-card">
+        <h4>A · Cambra de Comerç</h4>
+        <p style="font-size:9pt"><strong>Avantatges:</strong> marca centenària, Tribunal Arbitral de Barcelona (TAB), xarxa empresarial àmplia.</p>
+        <p style="font-size:9pt"><strong>Inconvenients:</strong> estructura pesada, presa de decisions lenta.</p>
+        <span class="chip chip-green">Recomanat com a amfitrió</span>
+      </div>
+      <div class="grid-card">
+        <h4>B · Foment del Treball</h4>
+        <p style="font-size:9pt"><strong>Avantatges:</strong> patronal degana, pes polític, capacitat d'aglutinar.</p>
+        <p style="font-size:9pt"><strong>Inconvenients:</strong> percebut com a "part interessada", menys experiència ADR.</p>
+        <span class="chip chip-blue">Copromotor estratègic</span>
+      </div>
+      <div class="grid-card">
+        <h4>C · Fundació .CAT</h4>
+        <p style="font-size:9pt"><strong>Avantatges:</strong> experiència real ADR (dominis), marca catalana, vinculació digital.</p>
+        <p style="font-size:9pt"><strong>Inconvenients:</strong> mida petita, focus digital.</p>
+        <span class="chip chip-amber">Partner tecnològic (opcional)</span>
+      </div>
+    </div>
+
+    <h3>1.2 Recomanació · Model consorci promotor</h3>
+    <div class="key-box"><strong>Model recomanat:</strong> consorci tripartit amb la Cambra de Comerç de Barcelona com a institució amfitriona principal, Foment del Treball com a copromotor estratègic, i el Col·legi d'Advocats de Barcelona (ICAB) com a garant jurídic.</div>
+
+    <table>
+      <thead>
+        <tr><th>Institució</th><th>Rol</th><th>Aportació</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Cambra de Comerç de Barcelona</strong></td><td>Amfitrió institucional</td><td>Marca, infraestructura, xarxa empresarial, experiència ADR via TAB</td></tr>
+        <tr><td><strong>Foment del Treball Nacional</strong></td><td>Copromotor estratègic</td><td>Representació empresarial, lobby institucional, captació socis fundadors</td></tr>
+        <tr><td><strong>Col·legi d'Advocats de Barcelona (ICAB)</strong></td><td>Garant jurídic</td><td>Marc legal, jurat de la publicitat, conveni de formació</td></tr>
+        <tr><td>Fundació .CAT</td><td>Partner tecnològic (opcional)</td><td>Plataforma ADR, expertise en mediació digital</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-box">El model consorci <strong>distribueix el risc</strong> entre tres institucions consolidades, <strong>multiplica la credibilitat</strong> davant la Generalitat, el CAC i AUTOCONTROL Madrid, i ofereix <strong>accés immediat a una base associativa potencial</strong> a través de les xarxes pròpies de cada institució.</div>
+
+    <h3>1.3 Marc jurídic</h3>
+    <p><strong>Forma jurídica recomanada:</strong> associació catalana sense ànim de lucre, regida per la <a href="https://www.parlament.cat/document/nom/TL75.pdf" class="external" target="_blank">Llei 4/2008 del llibre tercer del Codi Civil de Catalunya</a>.</p>
+
+    <p><strong>Nom de treball:</strong> ACCC — <em>Autoregulació Catalana de la Comunicació Comercial</em>. Alternativa: <em>AUTOCONTROL Catalunya</em> (en cas de spin-off acordat) o <em>ARPC</em> (Autoregulació de la Publicitat a Catalunya).</p>
+
+    <p><strong>Acreditació ADR:</strong> dos camins, tots dos sol·licitables:</p>
+    <ol>
+      <li><strong>Estatal</strong> — atorgada pel Ministeri de Drets Socials, Consum i Agenda 2030 (com AUTOCONTROL Madrid des de 2018).</li>
+      <li><strong>Autonòmica</strong> — atorgada per l'<a href="https://consum.gencat.cat" class="external" target="_blank">Agència Catalana del Consum</a>, possible per a matèries d'àmbit autonòmic.</li>
+    </ol>
+
+    <h3>1.4 Governança proposada</h3>
+    <div class="grid-2">
+      <div class="grid-card">
+        <h4>Junta Directiva (20 vocals)</h4>
+        <ul style="font-size:9.5pt; margin-top:8px">
+          <li>3 vocals institucionals (Cambra + Foment + ICAB)</li>
+          <li>5 anunciants</li>
+          <li>3 agències</li>
+          <li>3 mitjans</li>
+          <li>3 associacions sectorials</li>
+          <li>2 vocals independents</li>
+          <li>1 secretari (DG, veu sense vot)</li>
+        </ul>
+      </div>
+      <div class="grid-card">
+        <h4>Garanties d'independència</h4>
+        <ul style="font-size:9.5pt; margin-top:8px">
+          <li>Cap soci aporta més del 5% del pressupost</li>
+          <li>Jurat majoritàriament independent del sector</li>
+          <li>Resolucions publicades (jurisprudència)</li>
+          <li>Modificacions estatuts: 3/4 majoria</li>
+          <li>Mandats limitats (DG, president, vocals)</li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== PART 2 — SERVEIS I NECESSITATS ====== -->
+  <div class="section" id="p2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div class="section-title">Serveis i necessitats operatives</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>2.1 Cartera de serveis</h3>
+    <p>L'oferta es divideix en cinc famílies que repliquen —i amplien— el model d'AUTOCONTROL Madrid.</p>
+
+    <h4>Família A · Assessorament previ de publicitat</h4>
+    <table>
+      <thead><tr><th>Servei</th><th>Plazo</th><th>Soci</th><th>No soci</th></tr></thead>
+      <tbody>
+        <tr><td>Copy Advice estàndard</td><td>3 dies hàbils</td><td class="td-positive">Gratis fins cupo · 100 € extra</td><td>700 €</td></tr>
+        <tr><td>Copy Advice Express</td><td>&lt;1 dia hàbil</td><td>600 €</td><td>1.200 €</td></tr>
+        <tr><td>Copy Advice Briefing Influencers</td><td>3 dies</td><td class="td-positive">Gratis fins cupo</td><td>700 €</td></tr>
+        <tr><td>Copy Advice Complex</td><td>5 dies</td><td>150 €</td><td>1.500 €</td></tr>
+        <tr><td>Copy Advice d'Inversió</td><td>3-7 dies</td><td>150 €</td><td>1.500 €</td></tr>
+        <tr><td><strong>Copy Advice Audiovisual Català</strong> <span class="chip chip-green">DIFERENCIAL</span></td><td>3 dies</td><td>Inclòs cupo</td><td>600 €</td></tr>
+        <tr><td>Consultoria de campanyes/webs</td><td>A convenir</td><td>Des de 800 €</td><td>Des de 1.500 €</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Família B · Privacitat i protecció de dades</h4>
+    <table>
+      <thead><tr><th>Servei</th><th>Soci</th><th>No soci</th></tr></thead>
+      <tbody>
+        <tr><td>Cookie Advice</td><td>900 €</td><td>1.800 €</td></tr>
+        <tr><td>Web Advice (dades)</td><td>Des de 600 €</td><td>Des de 1.200 €</td></tr>
+        <tr><td>Consulta orientativa dades</td><td class="td-positive">Gratis fins cupo</td><td>A consultar</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Família C · Reclamacions i resolució</h4>
+    <table>
+      <thead><tr><th>Concepte</th><th>Tarifa</th></tr></thead>
+      <tbody>
+        <tr><td>Reclamació consumidor</td><td class="td-positive">Gratis</td></tr>
+        <tr><td>Soci vs. Soci · acceptació</td><td>40 €</td></tr>
+        <tr><td>Soci vs. Soci · decisió Jurat</td><td>350 €</td></tr>
+        <tr><td>No soci vs. qualsevol · acceptació</td><td>1.000 €</td></tr>
+        <tr><td>No soci vs. qualsevol · decisió</td><td>3.000 €</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Família E · Serveis exclusius del model català (diferencial)</h4>
+    <div class="grid-2">
+      <div class="grid-card">
+        <h4>Observatori de la Publicitat Catalana</h4>
+        <p style="font-size:9pt">Informe anual amb dades sectorials, KPIs i tendències.</p>
+      </div>
+      <div class="grid-card">
+        <h4>Anuari de Resolucions</h4>
+        <p style="font-size:9pt">Compilació amb caràcter de jurisprudència.</p>
+      </div>
+      <div class="grid-card">
+        <h4>Premis Comunicació Responsable Catalunya</h4>
+        <p style="font-size:9pt">Reconeixement anual a millors pràctiques.</p>
+      </div>
+      <div class="grid-card">
+        <h4>Programa formatiu universitari</h4>
+        <p style="font-size:9pt">Conveni amb UPF, ESADE, IESE, URL Blanquerna, UAB.</p>
+      </div>
+      <div class="grid-card">
+        <h4>Arbitratge en català</h4>
+        <p style="font-size:9pt">Conveni amb Tribunal Arbitral de Barcelona.</p>
+      </div>
+      <div class="grid-card">
+        <h4>Certificació Influencer en català</h4>
+        <p style="font-size:9pt">Per a creadors de contingut en català.</p>
+      </div>
+    </div>
+
+    <h3>2.2 Necessitats operatives</h3>
+    <div class="metrics-box">
+      <h4>Equip humà any 1</h4>
+      <div class="metric-row"><span>Director general</span><span class="metric-value">80-95.000 €/any</span></div>
+      <div class="metric-row"><span>3 juristes/tècnics</span><span class="metric-value">55-65.000 €/any (c/u)</span></div>
+      <div class="metric-row"><span>1 administrativa/back-office</span><span class="metric-value">32-38.000 €/any</span></div>
+      <div class="metric-row"><span>1 comunicació/community</span><span class="metric-value">42-48.000 €/any</span></div>
+      <div class="metric-row"><span><strong>Total personal any 1 (5 FTE)</strong></span><span class="metric-value">~350.000 €</span></div>
+    </div>
+
+    <h3>2.3 Capacitat objectiu</h3>
+    <table>
+      <thead><tr><th>KPI</th><th>Any 1</th><th>Any 2</th><th>Any 3</th></tr></thead>
+      <tbody>
+        <tr><td>Socis</td><td class="num">106</td><td class="num">138</td><td class="num">174</td></tr>
+        <tr><td>Copy Advice/any</td><td class="num">2.500</td><td class="num">4.000</td><td class="num">6.000</td></tr>
+        <tr><td>Consultes deontològiques</td><td class="num">400</td><td class="num">700</td><td class="num">1.200</td></tr>
+        <tr><td>Reclamacions resoltes</td><td class="num">60</td><td class="num">90</td><td class="num">120</td></tr>
+        <tr><td>Termini mig 1a instància</td><td class="num">14 dies</td><td class="num">12 dies</td><td class="num">10 dies</td></tr>
+        <tr><td>Professionals formats</td><td class="num">800</td><td class="num">1.500</td><td class="num">2.500</td></tr>
+        <tr><td>Influencers certificats</td><td class="num">200</td><td class="num">600</td><td class="num">1.000</td></tr>
+      </tbody>
+    </table>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== PART 3 — PROJECCIONS ECONÒMIQUES ====== -->
+  <div class="section" id="p3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div class="section-title">Projeccions econòmiques</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>3.1 P&amp;L triennal · escenari base</h3>
+    <table>
+      <thead><tr><th>Concepte</th><th>Any 1</th><th>Any 2</th><th>Any 3</th></tr></thead>
+      <tbody>
+        <tr><td colspan="4" style="background:#000; color:#fff; padding:6px 12px; font-size:9pt; letter-spacing:0.5px">INGRESSOS</td></tr>
+        <tr><td>Quotes anunciants</td><td class="num">320.000 €</td><td class="num">416.000 €</td><td class="num">520.000 €</td></tr>
+        <tr><td>Quotes agències</td><td class="num">30.000 €</td><td class="num">40.000 €</td><td class="num">50.000 €</td></tr>
+        <tr><td>Quotes mitjans</td><td class="num">64.000 €</td><td class="num">88.000 €</td><td class="num">112.000 €</td></tr>
+        <tr><td>Quotes associacions</td><td class="num">9.000 €</td><td class="num">12.000 €</td><td class="num">15.000 €</td></tr>
+        <tr><td>Copy Advice excedents</td><td class="num">20.000 €</td><td class="num">35.000 €</td><td class="num">55.000 €</td></tr>
+        <tr><td>Reclamacions no socis</td><td class="num">7.500 €</td><td class="num">12.000 €</td><td class="num">18.000 €</td></tr>
+        <tr><td>Formació</td><td class="num">30.000 €</td><td class="num">45.000 €</td><td class="num">65.000 €</td></tr>
+        <tr><td>Patrocinis i esdeveniments</td><td class="num">10.000 €</td><td class="num">25.000 €</td><td class="num">40.000 €</td></tr>
+        <tr><td>Subvencions Generalitat</td><td class="num">40.000 €</td><td class="num">0 €</td><td class="num">0 €</td></tr>
+        <tr><td>Quota entrada fundadors</td><td class="num">50.000 €</td><td class="num">0 €</td><td class="num">0 €</td></tr>
+        <tr class="highlight"><td><strong>TOTAL INGRESSOS</strong></td><td class="num"><strong>580.500 €</strong></td><td class="num"><strong>673.000 €</strong></td><td class="num"><strong>875.000 €</strong></td></tr>
+        <tr><td colspan="4" style="background:#000; color:#fff; padding:6px 12px; font-size:9pt; letter-spacing:0.5px">DESPESES</td></tr>
+        <tr><td>Personal (5→6 FTE)</td><td class="num">350.000 €</td><td class="num">358.000 €</td><td class="num">426.000 €</td></tr>
+        <tr><td>Operatives (lloguer, tec.)</td><td class="num">70.000 €</td><td class="num">73.000 €</td><td class="num">85.600 €</td></tr>
+        <tr><td>Jurat + activitats</td><td class="num">80.000 €</td><td class="num">108.000 €</td><td class="num">145.000 €</td></tr>
+        <tr><td>Imprevistos (5-10%)</td><td class="num">34.000 €</td><td class="num">35.000 €</td><td class="num">45.000 €</td></tr>
+        <tr class="highlight"><td><strong>TOTAL DESPESES</strong></td><td class="num"><strong>534.000 €</strong></td><td class="num"><strong>574.000 €</strong></td><td class="num"><strong>701.600 €</strong></td></tr>
+        <tr><td><strong>RESULTAT BRUT</strong></td><td class="num td-positive"><strong>+46.500 €</strong></td><td class="num td-positive"><strong>+99.000 €</strong></td><td class="num td-positive"><strong>+173.400 €</strong></td></tr>
+        <tr><td>Reserves + fons inversió</td><td class="num">-14.650 €</td><td class="num">-34.900 €</td><td class="num">-67.340 €</td></tr>
+        <tr style="background:#d4edda"><td><strong>RESULTAT NET</strong></td><td class="num td-positive"><strong>+31.850 €</strong></td><td class="num td-positive"><strong>+64.100 €</strong></td><td class="num td-positive"><strong>+106.060 €</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>3.2 Tres escenaris comparats</h3>
+    <table>
+      <thead><tr><th>Escenari</th><th>Any 1 Ingressos</th><th>Any 1 Resultat</th><th>Conclusió</th></tr></thead>
+      <tbody>
+        <tr><td>Conservador <span class="chip chip-red">50 socis</span></td><td class="num">380.000 €</td><td class="num td-negative">-120.000 €</td><td>No viable sense aportació externa contínua</td></tr>
+        <tr style="background:#fff9e6"><td><strong>Base</strong> <span class="chip chip-amber">106 socis</span></td><td class="num">580.500 €</td><td class="num td-positive">+46.500 €</td><td><strong>Break-even any 1, viable</strong></td></tr>
+        <tr><td>Optimista <span class="chip chip-green">142 socis</span></td><td class="num">780.000 €</td><td class="num td-positive">+220.000 €</td><td>Excedent significatiu, ampliació de serveis</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3.3 Sensibilitat a variables clau</h3>
+    <div class="warning-box">La <strong>variable més sensible</strong> és el nombre de socis any 1. Cada 21 socis menys/més impacten en ~80.000 € de resultat. El focus de la fase de validació ha de ser <strong>assegurar la base associativa mínima</strong>.</div>
+
+    <h3>3.4 Punt mort</h3>
+    <div class="key-box"><strong>85 socis pagant quota mitjana de 4.500 €/any</strong> (~382.000 €/any). En escenari base (106 socis), el break-even s'assoleix al final del primer any comptable.</div>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== PART 4 — GO TO MARKET ====== -->
+  <div class="section" id="p4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <div class="section-title">Estratègia go-to-market</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <p>L'estratègia GTM s'organitza en quatre fases seqüencials, amb objectius i KPIs específics per a cadascuna.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Fase 0 · Pre-llançament (mes -3 a 0)</div>
+        <div class="timeline-content"><strong>Objectiu:</strong> assegurar la base institucional i comercial abans de la constitució formal. Reunions exploratòries amb les 3 institucions promotores. Reunió amb AUTOCONTROL Madrid, CAC i Generalitat. Sondeig 15-20 anunciants.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Fase 1 · Llançament (mes 1-3)</div>
+        <div class="timeline-content"><strong>Objectiu:</strong> constituir formalment l'entitat. Acte fundacional. Roda de premsa institucional. Captació intensiva: 30-50 socis fundadors. Contractació equip core. Posada en marxa de la plataforma tècnica.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Fase 2 · Adopció (mes 4-12)</div>
+        <div class="timeline-content"><strong>Objectiu:</strong> massa crítica i sostenibilitat. Arribar als 106 socis. Volum Copy Advice ≥200/mes. Convenis amb CAC, ACC, Salut. Acreditació ADR sol·licitada. Adhesió a EASA.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Fase 3 · Consolidació (any 2-3)</div>
+        <div class="timeline-content"><strong>Objectiu:</strong> ampliació i internacionalització. 174 socis any 3. Observatori publicitat catalana. Premis Comunicació Responsable. Acreditació ADR completa. Membre EASA i observador ICAS.</div>
+      </div>
+    </div>
+
+    <h3>4.1 KPIs transversals</h3>
+    <div class="metrics-box">
+      <h4>Indicadors de seguiment</h4>
+      <div class="metric-row"><span>% reunions celebrades vs. planificades</span><span class="metric-value">Setmanal · objectiu &gt;80%</span></div>
+      <div class="metric-row"><span>Senyal d'interès post-reunió</span><span class="metric-value">Escala 1-5</span></div>
+      <div class="metric-row"><span>Disposició a pagar declarada</span><span class="metric-value">€/any mig</span></div>
+      <div class="metric-row"><span>Cartes d'intencions firmades</span><span class="metric-value">Mensual</span></div>
+      <div class="metric-row"><span>Cobertura mediàtica</span><span class="metric-value">Aparicions mes</span></div>
+    </div>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== PART 5 — INVERSIÓ ====== -->
+  <div class="section" id="p5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <div class="section-title">Inversió necessària</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>5.1 Capital semilla — desglossament (85.000 €)</h3>
+    <table>
+      <thead><tr><th>Concepte</th><th>Import</th></tr></thead>
+      <tbody>
+        <tr><td>Constitució jurídica (notari + registre)</td><td class="num">5.000 €</td></tr>
+        <tr><td>Estatuts + assessorament legal</td><td class="num">8.000 €</td></tr>
+        <tr><td>Branding (naming, logo, identitat)</td><td class="num">12.000 €</td></tr>
+        <tr><td>Web + plataforma tècnica (CRM + workflow)</td><td class="num">25.000 €</td></tr>
+        <tr><td>Esdeveniment de llançament</td><td class="num">20.000 €</td></tr>
+        <tr><td>Comunicació i RR.PP. inicial</td><td class="num">15.000 €</td></tr>
+        <tr class="highlight"><td><strong>TOTAL CAPITAL SEMILLA</strong></td><td class="num"><strong>85.000 €</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>5.2 Fons de maniobra any 1 — 80.000 €</h3>
+    <p>Necessari per cobrir les primeres nòmines i despeses operatives abans que entrin els primers ingressos de quotes (que es facturen trimestralment).</p>
+
+    <h3>5.3 Inversió total recomanada</h3>
+    <div class="key-box" style="text-align:center; font-size:13pt"><strong>165.000 €</strong> (85k semilla + 80k maniobra)</div>
+
+    <h3>5.4 Fonts de finançament</h3>
+    <table>
+      <thead><tr><th>Font</th><th>Import</th><th>Probabilitat</th></tr></thead>
+      <tbody>
+        <tr><td>Quotes entrada socis fundadors (10-15 × 5-7,5k €)</td><td class="num">60-90.000 €</td><td><span class="chip chip-green">Alta</span></td></tr>
+        <tr><td>Aportació promotor (Zoopa + 498A)</td><td class="num">25-35.000 €</td><td><span class="chip chip-green">Compromesa</span></td></tr>
+        <tr><td>Aportació institucions promotores</td><td class="num">20-30.000 €</td><td><span class="chip chip-amber">Mitjana</span></td></tr>
+        <tr><td>Subvenció Generalitat</td><td class="num">30-50.000 €</td><td><span class="chip chip-amber">Mitjana</span></td></tr>
+        <tr><td>Patrocini fundacional (1-2 grans anunciants)</td><td class="num">30-40.000 €</td><td><span class="chip chip-amber">Mitjana</span></td></tr>
+        <tr class="highlight"><td><strong>TOTAL</strong></td><td class="num"><strong>165-245.000 €</strong></td><td>Marge sobre objectiu</td></tr>
+      </tbody>
+    </table>
+
+    <h3>5.5 ROI esperat</h3>
+    <p>L'ACCC és una <strong>entitat sense ànim de lucre</strong>; el retorn es mesura en termes:</p>
+    <ul>
+      <li><strong>Social:</strong> enfortiment del sector publicitari català.</li>
+      <li><strong>Institucional:</strong> aval per a la Generalitat i el CAC.</li>
+      <li><strong>Reputacional:</strong> posicionament de Zoopa i 498A com a referents.</li>
+      <li><strong>Comercial indirecte:</strong> noves oportunitats per als promotors.</li>
+      <li><strong>Temporal:</strong> autosuficiència en 12-18 mesos; retorn de les aportacions del promotor en 24-36 mesos via excedent.</li>
+    </ul>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== PART 6 — BENCHMARK ====== -->
+  <div class="section" id="p6">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <div class="section-title">Benchmark competitiu vs AUTOCONTROL Madrid</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>6.1 Quadre de tarifes comparades</h3>
+    <table>
+      <thead><tr><th>Servei</th><th>AUTOCONTROL</th><th>ACCC</th><th>Estalvi</th></tr></thead>
+      <tbody>
+        <tr><td>Copy Advice estàndard (extra)</td><td class="num">115 €</td><td class="num">100 €</td><td class="td-positive"><strong>-13%</strong></td></tr>
+        <tr><td>Copy Advice Express</td><td class="num">690 €</td><td class="num">600 €</td><td class="td-positive"><strong>-13%</strong></td></tr>
+        <tr><td>Copy Advice Complex</td><td class="num">170 €</td><td class="num">150 €</td><td class="td-positive"><strong>-12%</strong></td></tr>
+        <tr><td>Cookie Advice</td><td class="num">1.025 €</td><td class="num">900 €</td><td class="td-positive"><strong>-12%</strong></td></tr>
+        <tr><td>Web Advice (dades)</td><td class="num">655 €</td><td class="num">600 €</td><td class="td-positive">-8%</td></tr>
+        <tr><td>Reclamació socio vs. socio (decisió)</td><td class="num">375 €</td><td class="num">350 €</td><td class="td-positive">-7%</td></tr>
+        <tr><td>Recurs alçada socio</td><td class="num">375 €</td><td class="num">350 €</td><td class="td-positive">-7%</td></tr>
+        <tr><td>Quota anunciant grup mig (M, 1,2-1,8 M€)</td><td class="num">4.745 €</td><td class="num">4.500 €</td><td class="td-positive">-5%</td></tr>
+        <tr><td>Quota mitjà grup mig</td><td class="num">2.690 €</td><td class="num">2.500 €</td><td class="td-positive">-7%</td></tr>
+        <tr><td>Quota agència grup mig</td><td class="num">3.480 €</td><td class="num">3.200 €</td><td class="td-positive">-8%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-box"><strong>L'ACCC se situa entre el 5% i el 13% per sota</strong> de les tarifes d'AUTOCONTROL en tots els serveis, mantenint qualitat tècnica equivalent. La diferència real és major encara, perquè el cupo de Copy Advice gratuïts inclòs en la quota és més generós.</div>
+
+    <h3>6.2 Diferencial estratègic</h3>
+    <div class="grid-2">
+      <div class="grid-card">
+        <h4>Avantatges directes</h4>
+        <ol style="font-size:9.5pt; margin-top:8px">
+          <li>Cost: 5-13% inferior</li>
+          <li>Llengua: català natiu</li>
+          <li>Proximitat: equip a BCN</li>
+          <li>Especialització territorial</li>
+          <li>Sensibilitat cultural</li>
+        </ol>
+      </div>
+      <div class="grid-card">
+        <h4>Avantatges indirectes</h4>
+        <ol style="font-size:9.5pt; margin-top:8px">
+          <li>Reconeixement institucional CAT</li>
+          <li>Networking amb Cambra/Foment</li>
+          <li>Reputació local</li>
+          <li>Formació en català</li>
+          <li>Veu pròpia al sistema</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3>6.3 Compatible amb AUTOCONTROL Madrid</h3>
+    <div class="solution-box">L'ACCC <strong>no obliga a deixar AUTOCONTROL</strong>. Les empreses poden tenir doble afiliació amb quota dual reduïda (estructura "AUTOCONTROL + ACCC" amb 30% descompte). Aquesta estratègia mitiga el risc R02 (rebuig per doble cost).</div>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== PART 7 — COMPARATIVA EUROPEA ====== -->
+  <div class="section" id="p7">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <div class="section-title">Comparativa europea</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>7.1 Visió ràpida — 9 organismes</h3>
+    <table>
+      <thead><tr><th>País</th><th>Organisme</th><th>Any</th><th>Socis</th><th>Quota mín.</th></tr></thead>
+      <tbody>
+        <tr style="background:#d4edda"><td>🇪🇸 CAT (proposta)</td><td><strong>ACCC</strong></td><td>2026</td><td class="num"><strong>106</strong></td><td class="num"><strong>350 €</strong></td></tr>
+        <tr><td>🇪🇸 ES</td><td><a href="https://www.autocontrol.es" class="external" target="_blank">AUTOCONTROL</a></td><td>1995</td><td class="num">645</td><td class="num">450 €</td></tr>
+        <tr><td>🇬🇧 UK</td><td><a href="https://www.asa.org.uk" class="external" target="_blank">ASA</a></td><td>1962</td><td>Universal</td><td>Levy 0,1%</td></tr>
+        <tr><td>🇫🇷 FR</td><td><a href="https://www.arpp.org" class="external" target="_blank">ARPP</a></td><td>1935/2008</td><td class="num">~700</td><td>+330€ entrada</td></tr>
+        <tr><td>🇩🇪 DE</td><td><a href="https://werberat.de" class="external" target="_blank">Werberat</a></td><td>1972</td><td>43 orgs.</td><td>Via ZAW</td></tr>
+        <tr><td>🇮🇹 IT</td><td><a href="https://www.iap.it" class="external" target="_blank">IAP</a></td><td>1966</td><td>Via asoc.</td><td>A través UPA</td></tr>
+        <tr><td>🇧🇪 BE</td><td><a href="https://www.jep.be" class="external" target="_blank">JEP</a></td><td>1974</td><td>UBA+ACC</td><td>Indústria</td></tr>
+        <tr><td>🇳🇱 NL</td><td><a href="https://www.reclamecode.nl" class="external" target="_blank">SRC</a></td><td>1964</td><td>Universal</td><td>0,025% inv.</td></tr>
+        <tr><td>🇵🇹 PT</td><td><a href="https://auto-regulacaopublicitaria.pt" class="external" target="_blank">ARP</a></td><td>1991</td><td class="num">~100</td><td>A consultar</td></tr>
+        <tr><td>🇮🇪 IE</td><td><a href="https://adstandards.ie" class="external" target="_blank">ASAI</a></td><td>1981</td><td>Indústria</td><td>Indústria</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.2 Tres models de finançament europeus</h3>
+    <div class="grid-3">
+      <div class="grid-card">
+        <h4>1 · Levy obligatori</h4>
+        <p style="font-size:9pt"><strong>UK (ASA)</strong></p>
+        <p style="font-size:9pt">0,1% sobre cost publicitat. Recaudat per <a href="https://advertisinglevy.co.uk" class="external" target="_blank">ASBoF</a>. Cobertura universal.</p>
+      </div>
+      <div class="grid-card">
+        <h4>2 · Contribució obligatòria</h4>
+        <p style="font-size:9pt"><strong>NL (SRC)</strong></p>
+        <p style="font-size:9pt">0,025% sobre gasto brut. 250 €/M€. Via Nielsen. Top advertisers obligats.</p>
+      </div>
+      <div class="grid-card">
+        <h4>3 · Quotes voluntàries</h4>
+        <p style="font-size:9pt"><strong>ESP, FR, IT, BE, PT, ACCC</strong></p>
+        <p style="font-size:9pt">Quotes anuals escalades + tarifes per servei. Model majoritari a Europa.</p>
+      </div>
+    </div>
+
+    <h3>7.3 Posicionament estratègic de l'ACCC</h3>
+    <div class="key-box">L'ACCC se situa en l'<strong>espai entre AUTOCONTROL i els SROs de menor mida europeus</strong>. Comparable en mida a IAP Italia, ARP Portugal i JEP Bèlgica, però amb un diferencial únic: <strong>llengua catalana com a llengua nativa del servei</strong>.</div>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== CONCLUSIONS ====== -->
+  <div class="section" id="conclusions">
+    <div class="section-header">
+      <div class="section-number">✓</div>
+      <div class="section-title">Conclusions i recomanacions</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>Conclusions principals</h3>
+    <ol>
+      <li><strong>Existeix una oportunitat real</strong>: buit de mercat detectat, marc legal favorable i interès institucional latent.</li>
+      <li><strong>El model "consorci promotor"</strong> redueix dràsticament el risc d'arrencada i aporta credibilitat institucional immediata.</li>
+      <li><strong>La viabilitat financera és sostenible</strong> amb 80-120 socis fundadors any 1, una inversió inicial de 165.000 €, i break-even en 12-18 mesos.</li>
+      <li><strong>El diferencial competitiu</strong> davant AUTOCONTROL Madrid és clar: llengua, proximitat, especialització, tarifes inferiors.</li>
+      <li><strong>El risc principal</strong> és la reacció d'AUTOCONTROL Madrid i la captació real de socis: cal accelerar la fase de validació.</li>
+      <li><strong>El benchmark europeu confirma</strong> que SROs de mida mitjana (IAP, ARP, JEP) operen amb èxit en mercats demogràficament similars.</li>
+    </ol>
+
+    <h3>6 recomanacions executives</h3>
+    <table>
+      <thead><tr><th>#</th><th>Recomanació</th><th>Inversió</th><th>Timing</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>Iniciar fase de validació immediatament</td><td class="num">12.500 €</td><td>90 dies</td></tr>
+        <tr><td><strong>2</strong></td><td>Adoptar el model "consorci promotor"</td><td>—</td><td>Sprint 1</td></tr>
+        <tr><td><strong>3</strong></td><td>Acord marc previ amb AUTOCONTROL Madrid</td><td>—</td><td>Sprint 1</td></tr>
+        <tr><td><strong>4</strong></td><td>Captar 3-5 anunciants ancla pre-llançament</td><td>—</td><td>Sprint 2</td></tr>
+        <tr><td><strong>5</strong></td><td>Calendari realista: constitució Q1 + llançament Q2</td><td>—</td><td>6 mesos</td></tr>
+        <tr><td><strong>6</strong></td><td>Aliances acadèmiques precoces (UPF, ESADE, IESE)</td><td>—</td><td>Sprint 2-3</td></tr>
+      </tbody>
+    </table>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== ANNEXOS ====== -->
+  <div class="section" id="annexos">
+    <div class="section-header">
+      <div class="section-number">📎</div>
+      <div class="section-title">Annexos</div>
+      <div class="section-anchor"><a href="#top">↑ inici</a></div>
+    </div>
+
+    <h3>Glossari</h3>
+    <ul style="font-size:9.5pt">
+      <li><strong>ADR</strong> (Alternative Dispute Resolution): resolució alternativa de litigis.</li>
+      <li><strong>EASA</strong> (European Advertising Standards Alliance): aliança europea de SROs.</li>
+      <li><strong>ICAS</strong> (International Council for Advertising Self-Regulation): consell internacional.</li>
+      <li><strong>SRO</strong> (Self-Regulatory Organisation): organisme d'autoregulació.</li>
+      <li><strong>Copy Advice®</strong>: marca registrada d'AUTOCONTROL per a la revisió prèvia de publicitat.</li>
+      <li><strong>ACCC</strong>: nom de treball provisional per a l'Autoregulació Catalana de la Comunicació Comercial.</li>
+      <li><strong>TAB</strong>: Tribunal Arbitral de Barcelona (Cambra de Comerç).</li>
+    </ul>
+
+    <h3>Referències normatives</h3>
+    <ul style="font-size:9.5pt">
+      <li><a href="https://www.boe.es/eli/es-ct/l/2008/04/24/4/dof/cat/pdf" class="external" target="_blank">Llei 4/2008</a> del llibre tercer del Codi Civil de Catalunya.</li>
+      <li><a href="https://www.boe.es/eli/es/l/1988/11/11/34/con" class="external" target="_blank">Llei 34/1988</a> General de Publicitat.</li>
+      <li><a href="https://www.boe.es/eli/es/l/2017/11/03/7" class="external" target="_blank">Llei 7/2017</a> de resolució alternativa de litigis.</li>
+      <li><a href="https://www.boe.es/eli/es/l/2022/07/07/13" class="external" target="_blank">Llei 13/2022</a> General de Comunicació Audiovisual.</li>
+      <li><a href="https://www.parlament.cat/document/cataleg/48083.pdf" class="external" target="_blank">Llei 2/2000</a> del CAC.</li>
+    </ul>
+
+    <h3>Documents complementaris al repositori</h3>
+    <ul style="font-size:9.5pt">
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/README.md" class="external" target="_blank">README · visió general</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/00-research-context.md" class="external" target="_blank">00-research-context · investigació completa AUTOCONTROL</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/investigacio-completa-ca.md" class="external" target="_blank">Investigació completa en català</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/01-hypothesis.md" class="external" target="_blank">01-hypothesis · hipòtesi</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/02-market-gap.md" class="external" target="_blank">02-market-gap · anàlisi de mercat</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/03-business-model.md" class="external" target="_blank">03-business-model</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/04-stakeholders.md" class="external" target="_blank">04-stakeholders</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/05-roadmap-90d.md" class="external" target="_blank">05-roadmap-90d</a></li>
+      <li><a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat/blob/main/docs/06-financial-projection.md" class="external" target="_blank">06-financial-projection</a></li>
+    </ul>
+
+    <a href="#top" class="back-to-top">↑ Tornar a l'inici</a>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-brands">
+      <div>
+        <span class="footer-brand">ZOOPA</span>
+        <span class="footer-brand-url"><a href="https://zoopa.es" target="_blank">zoopa.es</a></span>
+      </div>
+      <div>
+        <span class="footer-brand">498A</span>
+        <span class="footer-brand-url"><a href="https://498as.com" target="_blank">498as.com</a></span>
+      </div>
+    </div>
+    <div class="footer-info">
+      <div>
+        <strong>ZOOPA</strong> — Innovation &amp; Creative Technology<br>
+        <a href="https://zoopa.es" target="_blank">zoopa.es</a> · <a href="mailto:carlos.ortet@zoopa.es">carlos.ortet@zoopa.es</a>
+      </div>
+      <div style="text-align: right;">
+        <strong>498 Advance</strong> — AI R&amp;D Division<br>
+        <a href="https://498as.com" target="_blank">498as.com</a> · <a href="https://georadar.app" target="_blank">georadar.app</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      Document elaborat el 21 de maig de 2026 · Versió 1.0 · <a href="https://github.com/ZOOPA-Smart-Agency/autocontrol-cat" target="_blank">github.com/ZOOPA-Smart-Agency/autocontrol-cat</a><br>
+      <span class="internal">Document confidencial · Ús intern Zoopa/498A · Distribució selectiva sota acord previ</span>
+    </div>
+  </footer>
+
+</body>
+</html>
