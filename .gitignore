@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Claude Code
+.claude/
+*.session
+
+# Working files
+/tmp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Build outputs
+/build/
+/dist/
+/.cache/
+
+# IDE
+.idea/
+.vscode/
+
+# Secrets / drafts privados
+/private/
+*.env
+*.env.local
+*.draft.md
